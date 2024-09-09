@@ -1,5 +1,6 @@
 ﻿#include <iostream>
 #include <cmath>
+#include <iomanip>
 
 int main()
 {
@@ -17,11 +18,7 @@ int main()
 
         copy = number;
 
-        while (copy) {
-            ++i;
-            copy /= 10;
-        }
-        i--;
+        i = log10(number);
         std::cout << "Значение ее разрядов:\n";
         for (i; i >= 0; --i) {
 
@@ -93,7 +90,7 @@ int main()
 
     // Задание 5
     //---------------------------------------------------------------------------------
-    {
+     {
         float a, b;
         int number;
 
@@ -111,24 +108,36 @@ int main()
 
         switch (number) {
         case 1:
-            std::cout << "Результат действия равен = " << a + b << std::endl;
+            std::cout << "Результат действия равен = "
+                      <<std::fixed<<std::setprecision(5)
+                      << a + b << std::endl;
             break;
         case 2:
-            std::cout << "Результат действия равен = " << a - b << std::endl;
+            std::cout << "Результат действия равен = " 
+                      << std::fixed << std::setprecision(5)
+                      << a - b << std::endl;
             break;
         case 3:
-            std::cout << "Результат действия равен = " << a * b << std::endl;
+            std::cout << "Результат действия равен = " 
+                      << std::fixed << std::setprecision(5)
+                      << a * b << std::endl;
             break;
         case 4:
-            std::cout << "Результат действия равен = " << a / b << std::endl;
+            std::cout << "Результат действия равен = " 
+                      << std::fixed << std::setprecision(5)
+                      << a / b << std::endl;
             break;
         case 5:
             pow(a,b) > 4000000 ? std::cout << "Число слишком большое" << std::endl : 
-                                 std::cout << "Результат действия равен = " << pow(a, b) << std::endl;
+                                 std::cout << "Результат действия равен = " 
+                                           << std::fixed << std::setprecision(5)
+                                           << pow(a, b) << std::endl;
            
             break;
         case 6:
-            std::cout << "Результат действия равен = " << log(a) / log(b) << std::endl;
+            std::cout << "Результат действия равен = "
+                      << std::fixed << std::setprecision(5)
+                      << log(a) / log(b) << std::endl;
             break;
         }
     }
